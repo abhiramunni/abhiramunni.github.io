@@ -179,6 +179,23 @@
 .mk4-grid{display:flex;flex-wrap:wrap;justify-content:center}
 .mk4-tile{flex:1 1 150px;max-width:240px}
 @media (max-width:560px){.mk4-tile{flex:1 1 44%;max-width:none}}
+
+/* Alternating editorial headers: expertise heading right, work left, daily right, mk4 left */
+.expertise-wrap{grid-template-columns:minmax(420px,1.3fr) minmax(280px,.7fr)}
+.expertise-sticky{order:2}
+.expertise-sticky .section-heading{text-align:right}
+.expertise-sticky p{text-align:right;margin-left:auto}
+#daily .work-head{flex-direction:row-reverse}
+#daily .work-head .section-heading{text-align:right}
+.toolkit-lead{display:flex;flex-direction:row;justify-content:space-between;align-items:flex-end;gap:32px;margin-bottom:56px}
+.toolkit-lead p{max-width:420px}
+@media(max-width:820px){
+.expertise-sticky{order:0}
+.expertise-sticky .section-heading,.expertise-sticky p{text-align:left;margin-left:0}
+#daily .work-head{flex-direction:column}
+#daily .work-head .section-heading{text-align:left}
+.toolkit-lead{flex-direction:column;align-items:flex-start;gap:16px;margin-bottom:44px}
+}
 </style>
 </head>
 <body>
