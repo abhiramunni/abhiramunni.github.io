@@ -233,15 +233,8 @@
 
     <section class="dark section work grid-bg" id="work">
       <div class="section-label reveal">03 — Work / Repositories</div>
-      <div class="work-head reveal"><h2 class="section-heading">SELECTED<br><span class="outline">CODE</span></h2><p>Six public repositories across music, food ordering, e-commerce and Python.</p></div>
-      <div class="work-grid">
-        <a class="project reveal" href="https://stablesterling.github.io/Synthoria/" target="_blank" rel="noopener"><div class="project-top"><span class="project-index">REPOSITORY — 01</span><span class="project-link">↗</span></div><h3 class="project-title">SYNTHORIA</h3><div class="project-bottom"><p class="project-desc">online music player</p><div class="tags"><span class="tag">HTML</span><span class="tag">Live</span></div></div></a>
-        <a class="project reveal" href="https://stablesterling.github.io/Music/" target="_blank" rel="noopener"><div class="project-top"><span class="project-index">REPOSITORY — 02</span><span class="project-link">↗</span></div><h3 class="project-title">MUSIC</h3><div class="project-bottom"><p class="project-desc">music project</p><div class="tags"><span class="tag">HTML</span></div></div></a>
-        <a class="project reveal" href="https://stablesterling.github.io/Rasam/" target="_blank" rel="noopener"><div class="project-top"><span class="project-index">REPOSITORY — 03</span><span class="project-link">↗</span></div><h3 class="project-title">RASAM</h3><div class="project-bottom"><p class="project-desc">responsive food ordering website</p><div class="tags"><span class="tag">Live</span></div></div></a>
-        <a class="project reveal" href="https://stablesterling.github.io/Ecommerce-website/" target="_blank" rel="noopener"><div class="project-top"><span class="project-index">REPOSITORY — 04</span><span class="project-link">↗</span></div><h3 class="project-title">E-COMMERCE</h3><div class="project-bottom"><p class="project-desc">product management platform with user login</p><div class="tags"><span class="tag">Live</span></div></div></a>
-        <a class="project reveal" href="https://stablesterling.github.io/Player/" target="_blank" rel="noopener"><div class="project-top"><span class="project-index">REPOSITORY — 05</span><span class="project-link">↗</span></div><h3 class="project-title">PLAYER</h3><div class="project-bottom"><p class="project-desc">music player</p><div class="tags"><span class="tag">HTML</span></div></div></a>
-        <a class="project reveal" href="https://stablesterling.github.io/MeVu/" target="_blank" rel="noopener"><div class="project-top"><span class="project-index">REPOSITORY — 06</span><span class="project-link">↗</span></div><h3 class="project-title">MEVU</h3><div class="project-bottom"><p class="project-desc">Python project</p><div class="tags"><span class="tag">Python</span></div></div></a>
-      </div>
+      <div class="work-head reveal"><h2 class="section-heading">SELECTED<br><span class="outline">CODE</span></h2><p>Three public repositories across food ordering and e-commerce.</p></div>
+      <div class="work-grid"><a class="project reveal" href="https://stablesterling.github.io/Rasam/" target="_blank" rel="noopener"><div class="project-top"><span class="project-index">REPOSITORY — 01</span><span class="project-link">↗</span></div><h3 class="project-title">RASAM</h3><div class="project-bottom"><p class="project-desc">responsive food ordering website</p><div class="tags"><span class="tag">Live</span></div></div></a><a class="project reveal" href="https://stablesterling.github.io/Ecommerce-website/" target="_blank" rel="noopener"><div class="project-top"><span class="project-index">REPOSITORY — 02</span><span class="project-link">↗</span></div><h3 class="project-title">E-COMMERCE</h3><div class="project-bottom"><p class="project-desc">product management platform with user login</p><div class="tags"><span class="tag">Live</span></div></div></a><a class="project reveal" href="https://stablesterling.github.io/Player/" target="_blank" rel="noopener"><div class="project-top"><span class="project-index">REPOSITORY — 03</span><span class="project-link">↗</span></div><h3 class="project-title">PLAYER</h3><div class="project-bottom"><p class="project-desc">music player</p><div class="tags"><span class="tag">HTML</span></div></div></a></div>
     </section>
 
     
@@ -358,7 +351,7 @@
     });
     revealify(workGrid);
     var desc=document.querySelector('#work .work-head p');
-    if(desc){var total=base+apps.length;desc.textContent='Six public repositories plus '+apps.length+' shipped web app'+(apps.length===1?'':'s')+' \u2014 '+total+' projects live.';}
+    if(desc){var total=base+apps.length;desc.textContent=base+' public repositor'+(base===1?'y':'ies')+' plus '+apps.length+' shipped web app'+(apps.length===1?'':'s')+' \u2014 '+total+' projects live.';}
   }).catch(function(){});
 })();
 </script>
