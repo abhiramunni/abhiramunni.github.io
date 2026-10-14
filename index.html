@@ -108,7 +108,71 @@
       .section{padding-left:18px;padding-right:18px}.hero{padding-left:18px;padding-right:18px}.hero-title{font-size:18.5vw}.hero-sub{margin-top:20px}.hero-meta-center{text-align:left}.hero-meta-center a{justify-items:start}.connect-orbit{width:70px;height:70px}.connect-orbit svg{width:60px;height:60px}.section-label{margin-bottom:38px}.section-heading{font-size:22vw}.about-copy{font-size:24px}.facts{grid-template-columns:1fr}.fact,.fact:not(:first-child){padding:22px 0;border-right:0;border-bottom:1px solid var(--line)}.fact:nth-child(3){border-bottom:1px solid var(--line)}.expertise{padding-top:72px}.expertise-row{grid-template-columns:42px 1fr auto;gap:12px}.exp-icon{width:36px;height:36px}.project{padding:20px;min-height:390px}.project-title{font-size:70px}.project-bottom{display:block}.tags{justify-content:flex-start;margin-top:18px}.tool-row{padding:20px 0;gap:10px}.tool-row h3{font-size:22px}.contact{padding-left:18px;padding-right:18px}.contact h2{font-size:23vw}.contact-link{font-size:17px}.footer{margin-top:80px;display:flex;justify-content:space-between;align-items:center}.grid-bg{background-size:36px 36px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.loader{display:none}.reveal{opacity:1;transform:none}.cursor-dot{display:none}.project:hover{transform:none}}
-  </style>
+  
+/* MK4 compact animated grid */
+.mk4-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;margin-top:26px}
+.mk4-tile{display:flex;flex-direction:column;gap:7px;padding:14px 12px 12px;border:1px solid rgba(255,255,255,.09);border-radius:16px;background:rgba(255,255,255,.03);text-decoration:none;color:inherit;transition:transform .3s ease,border-color .3s ease}
+.mk4-tile:hover{transform:translateY(-3px);border-color:rgba(212,255,63,.45)}
+.mk4-demo{height:62px;border-radius:10px;background:rgba(0,0,0,.28);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.mk4-name{font-size:12px;font-weight:700;letter-spacing:.01em}
+.mk4-tag{font-size:11px;opacity:.55}
+/* 1 react-three-fiber: 3D orbit ring */
+.d-r3f i{position:absolute;left:50%;top:50%;width:36px;height:36px;margin:-18px 0 0 -18px;transform-style:preserve-3d;animation:mk-spin3d 3.6s linear infinite}
+.d-r3f i::before{content:"";position:absolute;left:50%;top:-3px;width:7px;height:7px;margin-left:-3.5px;border-radius:50%;background:#d4ff3f;box-shadow:0 0 10px #d4ff3f,15px 14px 0 -1px rgba(212,255,63,.55),-14px 15px 0 -1px rgba(212,255,63,.35)}
+@keyframes mk-spin3d{from{transform:rotateX(66deg) rotateZ(0)}to{transform:rotateX(66deg) rotateZ(360deg)}}
+/* 2 liquid-glass-js: sheen sweep */
+.d-glass{background:linear-gradient(135deg,#2f27ce,#433bff)}
+.d-glass b{width:34px;height:34px;border-radius:10px;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.5);position:relative;overflow:hidden}
+.d-glass b::after{content:"";position:absolute;top:-30%;bottom:-30%;width:45%;left:-70%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.75),transparent);transform:skewX(-18deg);animation:mk-sheen 2.8s ease-in-out infinite}
+@keyframes mk-sheen{0%{left:-70%}60%,100%{left:140%}}
+/* 3 shadergradient: morphing blob */
+.d-shader i{width:44px;height:44px;background:conic-gradient(from 0deg,#d4ff3f,#433bff,#ff6b9d,#d4ff3f);filter:blur(1px);animation:mk-blob 5s ease-in-out infinite alternate}
+@keyframes mk-blob{from{transform:rotate(0) scale(1);border-radius:58% 42% 55% 45%/48% 56% 44% 52%}to{transform:rotate(140deg) scale(1.18);border-radius:42% 58% 45% 55%/56% 44% 58% 42%}}
+/* 4 liquid-logo: elastic wobble */
+.d-logo b{font-size:30px;font-weight:800;display:inline-block;animation:mk-wob 2.4s ease-in-out infinite}
+@keyframes mk-wob{0%,100%{transform:scale(1,1)}30%{transform:scale(1.28,.72)}55%{transform:scale(.78,1.22)}78%{transform:scale(1.12,.88)}}
+/* 5 Motion: spring traverse */
+.d-motion i{width:10px;height:10px;border-radius:50%;background:#d4ff3f;box-shadow:0 0 10px rgba(212,255,63,.8);animation:mk-springx 2.4s cubic-bezier(.34,1.56,.64,1) infinite}
+@keyframes mk-springx{0%,100%{transform:translateX(-24px)}50%{transform:translateX(24px)}}
+/* 6 bklit-ui: staggered rows */
+.d-bklit{flex-direction:column;gap:6px}
+.d-bklit i{display:block;height:6px;border-radius:3px;background:rgba(255,255,255,.3);width:64px;animation:mk-rowin 2.4s ease-in-out infinite}
+.d-bklit i:nth-child(2){width:42px;animation-delay:.18s}
+.d-bklit i:nth-child(3){width:54px;animation-delay:.36s}
+@keyframes mk-rowin{0%,100%{opacity:.35;transform:translateX(-4px)}50%{opacity:1;transform:translateX(6px)}}
+/* 7 kokonutui: pressable pill */
+.d-koko b{padding:7px 20px;border-radius:999px;background:#d4ff3f;color:#101408;font-size:11px;font-weight:800;animation:mk-press 2.4s ease-in-out infinite}
+@keyframes mk-press{0%,100%{transform:scale(1);box-shadow:0 4px 16px rgba(212,255,63,.3)}50%{transform:scale(.9);box-shadow:0 1px 5px rgba(212,255,63,.15)}}
+/* 8 Motion Primitives: orbit */
+.d-mprim i{position:absolute;inset:6px;animation:mk-orbit 3s linear infinite}
+.d-mprim i::before{content:"";position:absolute;left:50%;top:50%;width:10px;height:10px;margin:-5px;border-radius:50%;background:#d4ff3f}
+.d-mprim i::after{content:"";position:absolute;left:50%;top:0;width:8px;height:8px;margin-left:-4px;border-radius:50%;background:#fff;box-shadow:0 0 10px #fff}
+@keyframes mk-orbit{to{transform:rotate(360deg)}}
+/* 9 Manus: fanning cards */
+.d-manus i{position:absolute;left:50%;top:50%;width:42px;height:28px;margin:-14px 0 0 -21px;border-radius:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.32);animation:mk-fan 3.2s ease-in-out infinite}
+.d-manus i:nth-child(2){animation-delay:.25s;background:rgba(212,255,63,.22);border-color:rgba(212,255,63,.5)}
+.d-manus i:nth-child(3){animation-delay:.5s}
+@keyframes mk-fan{0%,100%{transform:rotate(0) translateY(0)}50%{transform:rotate(-9deg) translateY(-5px)}}
+/* 10 Haikei: drifting waves */
+.d-haikei svg{width:130%;height:100%;animation:mk-wavedrift 5s ease-in-out infinite alternate}
+@keyframes mk-wavedrift{from{transform:translateX(-12%)}to{transform:translateX(4%)}}
+/* 11 Realtime Colors: hue cycling swatches */
+.d-colors{gap:7px}
+.d-colors i{width:18px;height:18px;border-radius:6px;animation:mk-hue 3s ease-in-out infinite}
+.d-colors i:nth-child(1){background:#d4ff3f}
+.d-colors i:nth-child(2){background:#433bff;animation-delay:1s}
+.d-colors i:nth-child(3){background:#ff6b9d;animation-delay:2s}
+@keyframes mk-hue{0%,100%{filter:hue-rotate(0);transform:scale(1)}50%{filter:hue-rotate(80deg);transform:scale(1.28)}}
+/* 12 animmasterlib: cinematic scan */
+.d-anim{width:72%;height:8px;border-radius:99px;background:rgba(255,255,255,.12);overflow:hidden;position:relative}
+.d-anim::after{content:"";position:absolute;top:0;bottom:0;left:-40%;width:40%;border-radius:99px;background:linear-gradient(90deg,transparent,#d4ff3f,transparent);animation:mk-scan 1.9s ease-in-out infinite}
+@keyframes mk-scan{to{left:100%}}
+/* 13 designprompts: type style cycle */
+.d-prompts b{font-size:24px;font-weight:700;animation:mk-typestyle 4.5s steps(1,end) infinite}
+@keyframes mk-typestyle{0%{font-family:Georgia,serif;font-style:italic;letter-spacing:0;color:#fff;-webkit-text-stroke:0}33%{font-family:Arial,sans-serif;font-style:normal;letter-spacing:.22em;color:#d4ff3f;-webkit-text-stroke:0}66%{font-family:Arial,sans-serif;font-style:normal;letter-spacing:.02em;color:transparent;-webkit-text-stroke:1px #fff}}
+@media (prefers-reduced-motion:reduce){.mk4-demo *,.mk4-demo*::before,.mk4-demo*::after{animation:none!important}}
+@media (max-width:560px){.mk4-grid{grid-template-columns:repeat(2,1fr)}}
+</style></style>
 </head>
 <body>
   <a class="skip-link" href="#work">Skip to work</a>
@@ -181,21 +245,21 @@
     </section>
     <section class="dark section toolkit grid-bg" id="mk4">
       <div class="section-label reveal">05 — MK4 / Design &amp; Animation Toolkit</div>
-      <div class="toolkit-lead reveal"><h2 class="section-heading">THE <span class="outline">MK4</span></h2><p>Each MK4 item contributes a visible pattern, visual treatment, component reference or art-direction step. The map below shows its role in this build.</p></div>
-      <div class="tool-list reveal">
-        <a class="tool-row" href="https://github.com/pmndrs/react-three-fiber" target="_blank" rel="noopener"><h3>react-three-fiber</h3><p>Informed the layered perspective particle field in the hero.</p><span class="go">↗</span></a>
-        <a class="tool-row" href="https://github.com/dashersw/liquid-glass-js" target="_blank" rel="noopener"><h3>liquid-glass-js</h3><p>Informed the refractive, blurred mobile navigation surface.</p><span class="go">↗</span></a>
-        <a class="tool-row" href="https://github.com/ruucm/shadergradient" target="_blank" rel="noopener"><h3>shadergradient</h3><p>Informed the cursor-reactive conic color field in the hero.</p><span class="go">↗</span></a>
-        <a class="tool-row" href="https://github.com/collidingScopes/liquid-logo" target="_blank" rel="noopener"><h3>liquid-logo</h3><p>Informed the elastic, pointer-reactive CREATIVE letterform.</p><span class="go">↗</span></a>
-        <a class="tool-row" href="https://motion.dev/" target="_blank" rel="noopener"><h3>Motion</h3><p>Informed the timed easing, reveals and spatial transitions.</p><span class="go">↗</span></a>
-        <a class="tool-row" href="https://github.com/bklit/bklit-ui" target="_blank" rel="noopener"><h3>bklit-ui</h3><p>Informed the systematic facts, tags and toolkit rows.</p><span class="go">↗</span></a>
-        <a class="tool-row" href="https://kokonutui.com/" target="_blank" rel="noopener"><h3>kokonutui</h3><p>Informed the touch-friendly mobile menu component.</p><span class="go">↗</span></a>
-        <a class="tool-row" href="https://motion-primitives.com/" target="_blank" rel="noopener"><h3>Motion Primitives</h3><p>Informed the reusable reveal and orbit motion patterns.</p><span class="go">↗</span></a>
-        <a class="tool-row" href="https://manus.im/" target="_blank" rel="noopener"><h3>Manus</h3><p>Used as a reference for the page composition workflow.</p><span class="go">↗</span></a>
-        <a class="tool-row" href="https://haikei.app/" target="_blank" rel="noopener"><h3>Haikei</h3><p>Informed the responsive SVG wave between sections.</p><span class="go">↗</span></a>
-        <a class="tool-row" href="https://www.realtimecolors.com/" target="_blank" rel="noopener"><h3>Realtime Colors</h3><p>Used to balance the cream, ink and acid color system.</p><span class="go">↗</span></a>
-        <a class="tool-row" href="https://animmasterlib.dev/" target="_blank" rel="noopener"><h3>animmasterlib</h3><p>Informed the cinematic loading and scroll progress effects.</p><span class="go">↗</span></a>
-        <a class="tool-row" href="https://www.designprompts.dev/" target="_blank" rel="noopener"><h3>designprompts</h3><p>Used to sharpen the editorial-industrial art direction.</p><span class="go">↗</span></a>
+      <div class="toolkit-lead reveal"><h2 class="section-heading">THE <span class="outline">MK4</span></h2><p>Thirteen tools behind this site's look and motion — each tile plays what its tool does.</p></div>
+      <div class="mk4-grid reveal">
+        <a class="mk4-tile" href="https://github.com/pmndrs/react-three-fiber" target="_blank" rel="noopener"><span class="mk4-demo d-r3f"><i></i></span><span class="mk4-name">react-three-fiber</span><span class="mk4-tag">3D scenes</span></a>
+        <a class="mk4-tile" href="https://github.com/dashersw/liquid-glass-js" target="_blank" rel="noopener"><span class="mk4-demo d-glass"><b></b></span><span class="mk4-name">liquid-glass-js</span><span class="mk4-tag">Frosted glass</span></a>
+        <a class="mk4-tile" href="https://github.com/ruucm/shadergradient" target="_blank" rel="noopener"><span class="mk4-demo d-shader"><i></i></span><span class="mk4-name">shadergradient</span><span class="mk4-tag">Gradient mesh</span></a>
+        <a class="mk4-tile" href="https://github.com/collidingScopes/liquid-logo" target="_blank" rel="noopener"><span class="mk4-demo d-logo"><b>M</b></span><span class="mk4-name">liquid-logo</span><span class="mk4-tag">Liquid type</span></a>
+        <a class="mk4-tile" href="https://motion.dev/" target="_blank" rel="noopener"><span class="mk4-demo d-motion"><i></i></span><span class="mk4-name">Motion</span><span class="mk4-tag">Spring motion</span></a>
+        <a class="mk4-tile" href="https://github.com/bklit/bklit-ui" target="_blank" rel="noopener"><span class="mk4-demo d-bklit"><i></i><i></i><i></i></span><span class="mk4-name">bklit-ui</span><span class="mk4-tag">UI system</span></a>
+        <a class="mk4-tile" href="https://kokonutui.com/" target="_blank" rel="noopener"><span class="mk4-demo d-koko"><b>Tap</b></span><span class="mk4-name">kokonutui</span><span class="mk4-tag">Components</span></a>
+        <a class="mk4-tile" href="https://motion-primitives.com/" target="_blank" rel="noopener"><span class="mk4-demo d-mprim"><i></i></span><span class="mk4-name">Motion Primitives</span><span class="mk4-tag">Orbits & reveals</span></a>
+        <a class="mk4-tile" href="https://manus.im/" target="_blank" rel="noopener"><span class="mk4-demo d-manus"><i></i><i></i><i></i></span><span class="mk4-name">Manus</span><span class="mk4-tag">Composition</span></a>
+        <a class="mk4-tile" href="https://haikei.app/" target="_blank" rel="noopener"><span class="mk4-demo d-haikei"><svg viewBox="0 0 120 64" preserveAspectRatio="none"><path d="M0,36 C20,18 40,18 60,36 C80,54 100,54 120,36 L120,64 L0,64 Z" fill="rgba(212,255,63,.4)"/><path d="M0,44 C25,28 45,28 70,44 C95,60 115,60 140,44 L140,64 L0,64 Z" fill="rgba(67,59,255,.4)" transform="translate(-20,0)"/></svg></span><span class="mk4-name">Haikei</span><span class="mk4-tag">SVG waves</span></a>
+        <a class="mk4-tile" href="https://www.realtimecolors.com/" target="_blank" rel="noopener"><span class="mk4-demo d-colors"><i></i><i></i><i></i></span><span class="mk4-name">Realtime Colors</span><span class="mk4-tag">Palettes</span></a>
+        <a class="mk4-tile" href="https://animmasterlib.dev/" target="_blank" rel="noopener"><span class="mk4-demo"><span class="d-anim"></span></span><span class="mk4-name">animmasterlib</span><span class="mk4-tag">Cinematic FX</span></a>
+        <a class="mk4-tile" href="https://www.designprompts.dev/" target="_blank" rel="noopener"><span class="mk4-demo d-prompts"><b>Aa</b></span><span class="mk4-name">designprompts</span><span class="mk4-tag">Art direction</span></a>
       </div>
     </section>
   </main>
