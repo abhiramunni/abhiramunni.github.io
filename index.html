@@ -257,20 +257,37 @@
 <script>
 (function(){
   function esc(s){return String(s).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+  function revealify(scope){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.12});
+    scope.querySelectorAll('.reveal:not(.visible)').forEach(function(el){io.observe(el);});
+  }
   fetch('apps.json').then(function(r){return r.json();}).then(function(apps){
+    if(!apps||!apps.length)return;
     var grid=document.getElementById('daily-grid');
-    if(!grid||!apps||!apps.length)return;
     apps.forEach(function(a,i){
       var n=String(a.day||i+1).padStart(2,'0');
       var el=document.createElement('a');
       el.className='project reveal';el.href=a.live;el.target='_blank';el.rel='noopener';
-      el.innerHTML='<div class="project-top"><span class="project-index">DAY '+n+' — '+esc(a.date||'')+'</span><span class="project-link">\u2197</span></div>'
+      el.innerHTML='<div class="project-top"><span class="project-index">DAY '+n+' \u2014 '+esc(a.date||'')+'</span><span class="project-link">\u2197</span></div>'
         +'<h3 class="project-title">'+esc((a.name||'').toUpperCase())+'</h3>'
         +'<div class="project-bottom"><p class="project-desc">'+esc(a.desc||'')+'</p><div class="tags"><span class="tag">Live</span><span class="tag">HTML</span></div></div>';
       grid.appendChild(el);
     });
-    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target);}});},{threshold:.12});
-    grid.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
+    revealify(grid);
+    var workGrid=document.querySelector('#work .work-grid');
+    var base=workGrid.querySelectorAll('.project').length;
+    apps.forEach(function(a,i){
+      var n=String(base+i+1).padStart(2,'0');
+      var el=document.createElement('a');
+      el.className='project reveal';el.href=a.live;el.target='_blank';el.rel='noopener';
+      el.innerHTML='<div class="project-top"><span class="project-index">APP \u2014 '+n+'</span><span class="project-link">\u2197</span></div>'
+        +'<h3 class="project-title">'+esc((a.name||'').toUpperCase())+'</h3>'
+        +'<div class="project-bottom"><p class="project-desc">'+esc(a.desc||'')+'</p><div class="tags"><span class="tag">Live app</span><span class="tag">Daily build</span></div></div>';
+      workGrid.appendChild(el);
+    });
+    revealify(workGrid);
+    var desc=document.querySelector('#work .work-head p');
+    if(desc){var total=base+apps.length;desc.textContent='Six public repositories plus '+apps.length+' shipped web app'+(apps.length===1?'':'s')+' \u2014 '+total+' projects live.';}
   }).catch(function(){});
 })();
 </script>
