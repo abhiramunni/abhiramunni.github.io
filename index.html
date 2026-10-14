@@ -172,6 +172,13 @@
 @keyframes mk-typestyle{0%{font-family:Georgia,serif;font-style:italic;letter-spacing:0;color:#fff;-webkit-text-stroke:0}33%{font-family:Arial,sans-serif;font-style:normal;letter-spacing:.22em;color:#d4ff3f;-webkit-text-stroke:0}66%{font-family:Arial,sans-serif;font-style:normal;letter-spacing:.02em;color:transparent;-webkit-text-stroke:1px #fff}}
 @media (prefers-reduced-motion:reduce){.mk4-demo *,.mk4-demo*::before,.mk4-demo*::after{animation:none!important}}
 @media (max-width:560px){.mk4-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+/* MK4 alignment fixes: stack header, center-balanced tile rows */
+.toolkit-lead{display:flex;flex-direction:column;gap:16px;margin-bottom:48px}
+.toolkit-lead p{max-width:600px}
+.mk4-grid{display:flex;flex-wrap:wrap;justify-content:center}
+.mk4-tile{flex:1 1 150px;max-width:240px}
+@media (max-width:560px){.mk4-tile{flex:1 1 44%;max-width:none}}
 </style></style>
 </head>
 <body>
