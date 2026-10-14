@@ -1,9 +1,18 @@
 [
   {
+    "title": "RupeeWise",
+    "subtitle": "Currency Converter & Trip Budget Planner",
+    "desc": "Convert between 10 currencies with editable indicative rates, and plan trip expenses auto-converted to INR with per-day averages and budget tracking. Inspired by the rupee's 1% surge.",
+    "url": "https://abhiramunni.github.io/rupeewise/",
+    "repo": "https://github.com/abhiramunni/rupeewise",
+    "date": "2026-10-14",
+    "day": 2
+  },
+  {
     "day": 1,
     "date": "2026-10-14",
     "name": "Fitness & Health Controller",
-    "desc": "Workout, water, sleep, weight/BMI and heart-rate tracking with animated charts \u2014 no signup, data stays in your browser.",
+    "desc": "Workout, water, sleep, weight/BMI and heart-rate tracking with animated charts — no signup, data stays in your browser.",
     "live": "https://abhiramunni.github.io/fitness-health-controller/",
     "repo": "https://github.com/abhiramunni/fitness-health-controller"
   }
