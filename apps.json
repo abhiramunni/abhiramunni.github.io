@@ -1,35 +1,35 @@
 [
-  {
-    "day": 5,
-    "date": "2026-10-15",
-    "name": "StudySprint",
-    "desc": "Exam countdown, syllabus tracker and Pomodoro focus timer for board-exam students.",
-    "live": "https://abhiramunni.github.io/studysprint/",
-    "repo": "https://github.com/abhiramunni/studysprint"
-  },
-  {
-    "day": 2,
-    "date": "2026-10-14",
-    "name": "WeatherWise",
-    "desc": "Beautiful animated weather app for India — live forecasts, rain alerts, hourly sparkline, 7-day outlook, city search with favorites.",
-    "live": "https://abhiramunni.github.io/weatherwise/",
-    "repo": "https://github.com/abhiramunni/weatherwise"
-  },
-  {
-    "subtitle": "Currency Converter & Trip Budget Planner",
-    "desc": "Convert between 10 currencies with editable indicative rates, and plan trip expenses auto-converted to INR with per-day averages and budget tracking. Inspired by the rupee's 1% surge.",
-    "repo": "https://github.com/abhiramunni/rupeewise",
-    "date": "2026-10-14",
-    "day": 2,
-    "name": "RupeeWise",
-    "live": "https://abhiramunni.github.io/rupeewise/"
-  },
-  {
-    "day": 1,
-    "date": "2026-10-14",
-    "name": "Fitness & Health Controller",
-    "desc": "Workout, water, sleep, weight/BMI and heart-rate tracking with animated charts — no signup, data stays in your browser.",
-    "live": "https://abhiramunni.github.io/fitness-health-controller/",
-    "repo": "https://github.com/abhiramunni/fitness-health-controller"
-  }
+ {
+  "day": 5,
+  "date": "2026-10-15",
+  "name": "StudySprint",
+  "desc": "Exam countdown, syllabus tracker and Pomodoro focus timer \u2014 now with a warm Academia redesign, cinematic intro and study photography.",
+  "live": "https://abhiramunni.github.io/studysprint/",
+  "repo": "https://github.com/abhiramunni/studysprint"
+ },
+ {
+  "day": 2,
+  "date": "2026-10-14",
+  "name": "WeatherWise",
+  "desc": "Beautiful animated weather app for India \u2014 live forecasts, rain alerts, hourly sparkline, 7-day outlook, city search with favorites.",
+  "live": "https://abhiramunni.github.io/weatherwise/",
+  "repo": "https://github.com/abhiramunni/weatherwise"
+ },
+ {
+  "subtitle": "Currency Converter & Trip Budget Planner",
+  "desc": "Convert between 10 currencies with editable indicative rates, and plan trip expenses auto-converted to INR with per-day averages and budget tracking. Inspired by the rupee's 1% surge.",
+  "repo": "https://github.com/abhiramunni/rupeewise",
+  "date": "2026-10-14",
+  "day": 2,
+  "name": "RupeeWise",
+  "live": "https://abhiramunni.github.io/rupeewise/"
+ },
+ {
+  "day": 1,
+  "date": "2026-10-14",
+  "name": "Fitness & Health Controller",
+  "desc": "Workout, water, sleep, weight/BMI and heart-rate tracking with animated charts \u2014 no signup, data stays in your browser.",
+  "live": "https://abhiramunni.github.io/fitness-health-controller/",
+  "repo": "https://github.com/abhiramunni/fitness-health-controller"
+ }
 ]
