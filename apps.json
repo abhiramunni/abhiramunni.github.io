@@ -1,5 +1,13 @@
 [
   {
+    "day": 5,
+    "date": "2026-10-15",
+    "name": "StudySprint",
+    "desc": "Exam countdown, syllabus tracker and Pomodoro focus timer for board-exam students.",
+    "live": "https://abhiramunni.github.io/studysprint/",
+    "repo": "https://github.com/abhiramunni/studysprint"
+  },
+  {
     "day": 2,
     "date": "2026-10-14",
     "name": "WeatherWise",
