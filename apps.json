@@ -1,5 +1,13 @@
 [
  {
+  "day": 7,
+  "date": "2026-10-16",
+  "name": "Diya",
+  "desc": "Diwali countdown and festive prep planner — gifts, sweets, cleaning and budget.",
+  "live": "https://abhiramunni.github.io/diya/",
+  "repo": "https://github.com/abhiramunni/diya"
+ },
+ {
   "day": 6,
   "date": "2026-10-15",
   "name": "RasoiMate",
