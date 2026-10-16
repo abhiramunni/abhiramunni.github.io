@@ -1,5 +1,13 @@
 [
  {
+  "day": 8,
+  "date": "2026-10-16",
+  "name": "DealDetective",
+  "desc": "Sale-season price tracker and discount truth-checker for smart shoppers.",
+  "live": "https://abhiramunni.github.io/dealdetective/",
+  "repo": "https://github.com/abhiramunni/dealdetective"
+ },
+ {
   "day": 7,
   "date": "2026-10-16",
   "name": "Diya",
