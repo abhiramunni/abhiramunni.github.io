@@ -1,5 +1,13 @@
 [
  {
+  "day": 9,
+  "date": "2026-10-17",
+  "name": "PeakPlan",
+  "desc": "Energy-based day planner — demanding tasks land in your peak hours, easy ones fill the dips.",
+  "live": "https://abhiramunni.github.io/peakplan/",
+  "repo": "https://github.com/abhiramunni/peakplan"
+ },
+ {
   "day": 8,
   "date": "2026-10-16",
   "name": "DealDetective",
