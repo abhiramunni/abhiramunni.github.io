@@ -1,5 +1,13 @@
 [
  {
+  "day": 11,
+  "date": "2026-10-17",
+  "name": "Sundown",
+  "desc": "Screen-time wind-down tracker — log screen hours, build phone-down-before-bed streaks, and collect calmer evenings.",
+  "live": "https://abhiramunni.github.io/sundown/",
+  "repo": "https://github.com/abhiramunni/sundown"
+ },
+ {
   "day": 10,
   "date": "2026-10-17",
   "name": "Safar",
